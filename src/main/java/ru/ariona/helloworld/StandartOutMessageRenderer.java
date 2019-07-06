@@ -1,5 +1,11 @@
 package ru.ariona.helloworld;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.stereotype.Service;
+
+@ComponentScan(basePackages = {"ru.ariona.helloworld"})
+@Service("renderer")
 public class StandartOutMessageRenderer implements MessageRenderer {
 
     private MessageProvider messageProvider;
@@ -14,6 +20,7 @@ public class StandartOutMessageRenderer implements MessageRenderer {
     }
 
     @Override
+    @Autowired
     public void setMessageProvider(MessageProvider provider) {
         messageProvider = provider;
     }

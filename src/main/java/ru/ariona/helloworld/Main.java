@@ -5,7 +5,7 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 
 public class Main {
     public static void main(String[] args) {
-        ApplicationContext ctx = new AnnotationConfigApplicationContext(HelloWorldConfig.class);
+        ApplicationContext ctx = new AnnotationConfigApplicationContext(StandartOutMessageRenderer.class);
         MessageRenderer renderer = ctx.getBean("renderer",MessageRenderer.class);
         renderer.render();
     }
